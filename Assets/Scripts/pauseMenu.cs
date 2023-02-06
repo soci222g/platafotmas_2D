@@ -26,7 +26,7 @@ private void Awacke()
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("cancel"))
+        if (Input.GetButtonDown("Cancel"))
         {
             if (isPause)
             {
