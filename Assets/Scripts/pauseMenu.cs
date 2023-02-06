@@ -37,6 +37,7 @@ private void Awacke()
                 Time.timeScale = 0;
             }
             isPause = !isPause;
+            PauseMenu.SetActive(isPause);
         }
     }
 
@@ -46,9 +47,9 @@ private void Awacke()
         isPause = false;
         PauseMenu.SetActive(false);
     }
-
     public void MainMenu()
     {
         Debug.Log("ir a menu");
     }
 }
+
