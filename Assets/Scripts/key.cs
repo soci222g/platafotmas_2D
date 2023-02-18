@@ -1,31 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class key : MonoBehaviour
 {
-    public GameObject key;
-    public bool key_piked;
-    Rigidbody2D rb;
-    // Start is called before the first frame update
+
+    public Collider2D cl;
+    [SerializeField]
+    private UnityEvent collisonEneter;
+    [SerializeField]
+    private UnityEvent collisonExit;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+       cl = GetComponent<Collider2D>();
     }
-
-    // Update is called once per frame
-    void Update()
+        private void OnCollisionEnter2D(Collision2D collision)
     {
-
-    }
-    if (collision.gameObject.tag == "key"){
-            
-             
-             key_piked = true;
-        
+        if (cl.transform.tag == "player")
+        {
+            collisonEneter?.Invoke();
         }
-    
-        
-        
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (cl.transform.tag == "player")
+        {
+            collisonExit?.Invoke();
+        }
+    }
 
 }
