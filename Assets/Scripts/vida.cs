@@ -1,7 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class vida : MonoBehaviour
 {
 
@@ -15,12 +16,21 @@ public class vida : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isAlive == false)
+        {
+            SceneManager.LoadScene("Game_over");
+            Destroy(gameObject);
+        }
     }
-
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "spikes")
+        {
+            isAlive = false;
 
+
+        }
 
     }
 }
