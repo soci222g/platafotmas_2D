@@ -11,7 +11,7 @@ public class fin : MonoBehaviour
         if (collision.gameObject.tag == "player")
         {
             SceneManager.LoadScene("Game_over");
-            Debug.Log("canvio de escena");
+
         }
     }
 }

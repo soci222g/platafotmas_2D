@@ -19,8 +19,7 @@ public class vida : MonoBehaviour
         if (isAlive == false)
         {
             SceneManager.LoadScene("Game_over");
-            Destroy(gameObject);
-        }
+         }
     }
    
     private void OnTriggerEnter2D(Collider2D collision)
