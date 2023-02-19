@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pauseMenu : MonoBehaviour
 {
@@ -49,7 +50,7 @@ private void Awacke()
     }
     public void MainMenu()
     {
-        Debug.Log("ir a menu");
+        SceneManager.LoadScene("menu_Inici");
     }
 }
 
